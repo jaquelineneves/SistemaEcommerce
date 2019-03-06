@@ -6,13 +6,29 @@
 package model.domain;
 
 import java.util.Objects;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author ADMIN
  */
+
+@Entity
+@Table(name="TB_FORNECEDOR")
 public class Fornecedor {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="CD_FORNECEDOR")
     private Integer codigo;
+    
+    //campo not null e de tamanho 255
+    @Column(name="NM_FORNECEDOR", length = 255, nullable = false)
     private String nome;
     
     public Fornecedor(){
