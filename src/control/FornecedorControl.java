@@ -82,14 +82,13 @@ public final class FornecedorControl {
     public void setFornecedoresTabela(List<Fornecedor> fornecedoresTabela) {
         this.fornecedoresTabela = fornecedoresTabela;
     }
-    /* CONFERIR */
-    /*
-    public void addPropertyChangeListener(PropertyChangeListener){
-        propertyChangeSupport.addPropertyChangeListener(listener);
+    
+    public void addPropertyChangeListener(PropertyChangeListener p){
+        propertyChangeSupport.addPropertyChangeListener(p);
     }
     
-    public void removePropertyChangeListener(PropertyChangeListener){
-        propertyChangeSupport.removePropertyChangeListener(listener);
+    public void removePropertyChangeListener(PropertyChangeListener p){
+        propertyChangeSupport.removePropertyChangeListener(p);
     }
-    */
+    
 }
