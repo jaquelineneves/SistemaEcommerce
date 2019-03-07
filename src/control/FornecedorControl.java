@@ -11,8 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 import model.dao.FornecedorDao;
 import model.domain.Fornecedor;
+import model.service.ServiceLocator;
 import org.jdesktop.observablecollections.ObservableCollections;
-import sun.awt.AWTAccessor;
 import util.ValidacaoException;
 
 /**
@@ -28,7 +28,7 @@ public final class FornecedorControl {
     private final FornecedorDao fornecedorDao;
     
     public FornecedorControl(){
-        fornecedorDao = new FornecedorDao();
+        fornecedorDao = ServiceLocator.getFornecedorDao();
         fornecedoresTabela = ObservableCollections.observableList(new ArrayList<Fornecedor>());
         novo();
         pesquisar();
