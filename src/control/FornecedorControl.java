@@ -13,6 +13,7 @@ import model.dao.FornecedorDao;
 import model.domain.Fornecedor;
 import org.jdesktop.observablecollections.ObservableCollections;
 import sun.awt.AWTAccessor;
+import util.ValidacaoException;
 
 /**
  *
@@ -42,7 +43,8 @@ public final class FornecedorControl {
         fornecedoresTabela.addAll(fornecedorDao.pesquisar(fornecedorDigitado));        
     }
     
-    public void salvar(){
+    public void salvar() throws ValidacaoException{
+        fornecedorDigitado.validar();
         fornecedorDao.salvarAtualizar(fornecedorDigitado);
         novo();
         pesquisar();

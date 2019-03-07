@@ -7,6 +7,7 @@ package view;
 
 import control.FornecedorControl;
 import javax.swing.JOptionPane;
+import util.ValidacaoException;
 
 /**
  *
@@ -197,8 +198,12 @@ public class FornecedorView extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnNovoActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        fornecedorControl.salvar();
-        JOptionPane.showMessageDialog(this, "Fornecedor Salvo com Sucesso", "Salvar Fornecedor", JOptionPane.INFORMATION_MESSAGE);
+        try{
+            fornecedorControl.salvar();
+            JOptionPane.showMessageDialog(this, "Fornecedor Salvo com Sucesso", "Salvar Fornecedor", JOptionPane.INFORMATION_MESSAGE);
+        } catch(ValidacaoException e){
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Falha de Validação", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
